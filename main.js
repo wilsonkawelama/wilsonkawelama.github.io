@@ -6,7 +6,9 @@ const successCallback = (position) =>{
 const errorCallback = (error) =>{
     console.log(error);
 }
-
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
+const options = {
+    enableHighAccurancy: true,
+    timeout:10000
+}
+const id = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options);
 }
